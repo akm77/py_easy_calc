@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "py-easy-calc"
+version = "0.1.0"
+description = "Lightweight financial calculator that evaluates expressions with percentage handling."
+authors = ["akm77 <aleksey.kotryakhov@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["calculator", "finance", "percent"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+]
+packages = [
+    { include = "calculator" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+lark-parser = ">=0.12.0,<0.13.0"
+
+[tool.poetry.group.dev]
+optional = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1"
+ruff = "^0.1.0"
+
+[tool.poetry.urls]
+homepage = "https://github.com/akm77/py-easy-calc"
+repository = "https://github.com/akm77/py-easy-calc"
+documentation = "https://github.com/akm77/py-easy-calc#readme"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+exclude = ["build", "dist", ".venv", ".git"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
