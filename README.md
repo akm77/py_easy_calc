@@ -8,6 +8,29 @@
 - Safe evaluation returning `None` for invalid expressions or division by zero.
 - Decimal precision control with automatic trimming of trailing zeros.
 
+## Installation
+
+Install directly from the public GitHub repository.
+
+- Using pip:
+
+```bash
+pip install git+https://github.com/akm77/py_easy_calc.git
+```
+
+- Using poetry:
+
+```bash
+poetry add git+https://github.com/akm77/py_easy_calc.git
+```
+
+Or declare the dependency in `pyproject.toml`:
+
+```toml
+[tool.poetry.dependencies]
+py-easy-calc = { git = "https://github.com/akm77/py_easy_calc.git", rev = "main" }
+```
+
 ## Usage
 
 ```python
@@ -17,9 +40,10 @@ result = calc_expression("100 + 2%")
 print(result)  # Decimal("102")
 ```
 
-Control precision:
+Control precision (default `precision=4`, trailing zeros are trimmed automatically):
 
 ```python
+calc_expression("10 / 3")  # Decimal("3.3333")
 calc_expression("10 / 3", precision=3)  # Decimal("3.333")
 ```
 
